@@ -3,7 +3,7 @@ ASP:NET MVC Yapısı ile yapılmış E-Ticaret Sitesidir.
 
 Harran Üniversitesi Bilgisayar Mühendisliği E-Ticaret dersi için hazırlanmış web sayfasıdır.
 
-Veri tabanı olarak SQL Server kullanılmıştır.
+Veri tabanı olarak SQL Server 2019 kullanılmıştır.
 
 # Proje Ekibi
 Cemile Genç - genccemile97@gmail.com
