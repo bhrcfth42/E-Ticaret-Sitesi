@@ -1,0 +1,109 @@
+﻿@model IEnumerable<eCompare.Models.Urun>
+
+@{
+    Layout = null;
+}
+
+
+<div class="col-lg-12" style="overflow:auto">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Beden)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kategori)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Renk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Video)
+            </th>
+            <th>
+                Adı
+            </th>
+            <th>
+                Açıklama
+            </th>
+            <th>
+                Fiyat
+            </th>
+            <th>
+                Tarih
+            </th>
+            <th>
+                Stok
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beden.no)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kategori.ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Renk.adi)
+                </td>
+                <td>
+                    <img src="@item.Resim.yol" width="150" height="100" style="object-fit:cover" />
+                </td>
+                <td>
+                    @if (item.Video != null)
+                    {
+                        <video controls width="200">
+                            <source src="@item.Video.yol" />
+                        </video>
+                    }
+                </td>
+                <td>
+                    @if (item.adi.Length > 10)
+                    {
+                        @item.adi.Substring(0, 10)
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.adi)
+                    }
+
+                </td>
+                <td>
+
+                    @if (item.detay.Length > 30)
+                    {
+                        @Html.Raw(item.detay.Substring(0,30))
+                    }
+                    else
+                    {
+                        @Html.Raw(item.detay)
+                    }
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fiyat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tarih)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.stok)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "UrunDuzenle", new { id = item.id }) |
+                    <a href="/Detail/Index/@item.adi/@item.id">İçerik</a> |
+                    @Html.ActionLink("Sil", "UrunSil", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

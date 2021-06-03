@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model IEnumerable<eCompare.Models.Kategori>
+<!--  -->
+<h4 class="m-text14 p-b-7">
+    Kategoriler
+</h4>
+
+<ul class="p-b-54">
+    <li class="p-t-4">
+        <a href="/Product" class="s-text13 active1">
+            Tümü
+        </a>
+    </li>
+
+    @foreach (var kategori in Model)
+    {
+        <li class="p-t-4">
+            @Html.ActionLink(kategori.ad, "Index", new { kategori_id = kategori.id })
+            <a href="" class="s-text13">
+                @kategori.ad
+            </a>
+        </li>
+    }
+</ul>

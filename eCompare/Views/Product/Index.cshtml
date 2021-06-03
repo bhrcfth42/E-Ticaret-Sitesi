@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Ürünler";
+    Layout = "~/Views/Shared/ProductAna.cshtml";
+}
+
+@{ Html.RenderAction("Header");}
+
+<!-- Content page -->
+<section class="bgwhite p-t-55 p-b-65">
+    <div class="container">
+        <div class="row">
+
+            @{ Html.RenderAction("FilterPage");}
+
+            <div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
+
+                @{ Html.RenderAction("OrderByPage");}
+
+                @{ Html.RenderAction("ProductPage");}
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@{ Html.RenderAction("Footer");}
+

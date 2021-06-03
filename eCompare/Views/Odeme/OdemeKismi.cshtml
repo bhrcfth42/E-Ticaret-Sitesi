@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Ödeme Bilgisi</h4>
+            <form role="form">
+                <div class="form-group">
+                    <label for="username">Kart Üzerindeki İsim</label>
+                    <input type="text" class="form-control border" name="username" placeholder="Ör. Ahmet Güler" required="">
+                </div> <!-- form-group.// -->
+
+                <div class="form-group">
+                    <label for="cardNumber">Kart Numarası</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control border" name="cardNumber" placeholder="">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <img src="~/Content/images/icons/iconfinder_payment_method_card_visa_206684 (1).png" /> &nbsp;
+                                <img src="~/Content/images/icons/iconfinder__Mastercard_1156750.png" />
+                            </span>
+                        </div>
+                    </div> <!-- input-group.// -->
+                </div> <!-- form-group.// -->
+                <div class="row">
+                    <div class="col-md flex-grow-0">
+                        <div class="form-group">
+                            <label><span class="hidden-xs">Expiration</span> </label>
+                            <div class="form-inline" style="min-width: 220px">
+                                <select class="form-control" style="width:100px">
+                                    <option>MM</option>
+                                    <option>01</option>
+                                    <option>02</option>
+                                    <option>03</option>
+                                    <option>04</option>
+                                    <option>05</option>
+                                    <option>06</option>
+                                    <option>07</option>
+                                    <option>08</option>
+                                    <option>09</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                </select>
+                                <span style="width:20px; text-align: center"> / </span>
+                                <select class="form-control" style="width:100px">
+                                    <option>YY</option>
+                                    <option>2021</option>
+                                    <option>2022</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                    <option>2025</option>
+                                    <option>2026</option>
+                                    <option>2027</option>
+                                    <option>2028</option>
+                                    <option>2029</option>
+                                    <option>2030</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label data-toggle="tooltip" title="" data-original-title="Kartın Arka Yüzündeki 3 Haneli Kod">CVV <i class="fa fa-question-circle"></i></label>
+                            <input class="form-control border" required="" type="text">
+                        </div> <!-- form-group.// -->
+                    </div>
+                </div> <!-- row.// -->
+                @Html.ActionLink("Öde","SiparisKayit",null,new {@class= "btn btn-primary btn-block" })
+            </form>
+        </div> <!-- card-body.// -->
+    </div>
+</div>

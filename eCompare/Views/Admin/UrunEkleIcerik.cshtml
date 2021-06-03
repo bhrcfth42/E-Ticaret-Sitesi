@@ -1,0 +1,103 @@
+﻿@model eCompare.Models.Urun
+
+@{
+    Layout = null;
+}
+@section scripts {
+    <script>
+        ClassicEditor.replace('detay', {
+            htmlEncodeOutput: true
+        });
+    </script>
+}
+
+<h2>Ürün Ekle</h2>
+
+
+@using (Html.BeginForm("UrunEkle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.adi, "Ürün Adi", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.adi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.adi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.detay, "Ürün Açıklaması", htmlAttributes: new { @class = "control-label col-md-6" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.detay, new { @class = "form-control col-md-12", cols = "10"})
+                @Html.ValidationMessageFor(model => model.detay, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fiyat, "Ürün Fiyatı", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fiyat, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @value = "0" } })
+                @Html.ValidationMessageFor(model => model.fiyat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.stok, "Ürün Stok Sayısı", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.stok, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @value = "0" } })
+                @Html.ValidationMessageFor(model => model.stok, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.video_id, "Video", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="video" value="" class="btn btn-lg btn-outline-info" accept="video/*"/>
+                @Html.ValidationMessageFor(model => model.video_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.resim_id, "Resim", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="resim" value="" class="btn btn-lg btn-outline-info" multiple accept="image/*"/>
+                @Html.ValidationMessageFor(model => model.resim_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kategori_id, "Kategori", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("kategori_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.kategori_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.beden_id, "Beden", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("beden_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.beden_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.renk_id, "Renk", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("renk_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.renk_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Ürün Ekle" class="btn btn-lg btn-outline-success">
+                <div class="my-2"></div>
+            </div>
+        </div>
+    </div>
+}

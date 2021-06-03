@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model IEnumerable<eCompare.Models.Kategori>
+
+@foreach (var kategori in Model)
+{
+    <!-- Banner video -->
+    <section class="parallax0 parallax100" style="background-image: url(Content/images/bg-video-01.jpg);">
+        <div class="overlay0 p-t-190 p-b-200">
+            <div class="flex-col-c-m p-l-15 p-r-15">
+                <span class="m-text9 p-t-45 fs-20-sm">
+                    @kategori.ad
+                </span>
+                <span class="btn-play s-text4 hov5 cs-pointer p-t-25" data-toggle="modal" data-target="#modal-video-01">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                    Play 
+                </span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Modal Video 01-->
+    <div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="modal-dialog" role="document" data-dismiss="modal">
+            <div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
+            <div>
+                <!--Video source-->
+                <video id="video" class="video-fluid" height="720" controls loop>
+                    <source src="@kategori.video_yol" />
+                </video>
+                <div class="mask rgba-indigo-light"></div>
+            </div>
+
+        </div>
+    </div>
+}
+<script type="text/javascript">
+
+    document.onclick = function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+        var obj = document.getElementById('modal-video-01');
+        if (target != obj) {
+            obj.style.display = 'none';
+            document.getElementById('video').pause();
+        }
+    }
+</script>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<eCompare.Models.Renk>
+@{
+    Layout = null;
+}
+
+<div class="filter-color p-t-22 p-b-50 bo3">
+    <div class="m-text15 p-b-12">
+        Renkler
+    </div>
+
+    <ul class="flex-w">
+        @foreach (var item in Model)
+        {
+            <li class="m-r-10">
+                @Html.ActionLink(" ", "Index", new { renk_id = item.id }, new { @class = "color-filter", @for = "color-filter-" + item.id, @style = "background-color:" + item.kod })
+            </li>
+        }
+
+    </ul>
+</div>

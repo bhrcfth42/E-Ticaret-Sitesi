@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/OdemeAna.cshtml";
+}
+
+
+@{
+    Html.RenderAction("Header");
+    Html.RenderAction("SepetKismi");
+    Html.RenderAction("AdresKismi");
+    Html.RenderAction("OdemeKismi");
+    Html.RenderAction("Footer");
+}
+

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Ana Sayfa";
+    Layout = "~/Views/Shared/Ana.cshtml";
+}
+
+@{
+    Html.RenderAction("Header");
+    Html.RenderAction("Slide1");
+    Html.RenderAction("Banner");
+    Html.RenderAction("OurProduct");
+    Html.RenderAction("BannerVideo");
+    Html.RenderAction("Footer");
+}
+
+

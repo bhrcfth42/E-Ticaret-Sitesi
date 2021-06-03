@@ -1,0 +1,60 @@
+﻿@model IEnumerable<eCompare.Models.Siparis>
+
+@{
+    Layout = null;
+}
+<div class="col-lg-12" style="overflow:auto">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                Ürün Resmi
+            </th>
+            <th>
+                Ürün Videosu
+            </th>
+            <th>
+                Ürün Adı
+            </th>
+            <th>
+                Adet
+            </th>
+            <th>
+                Sipariş Tarihi
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adres.detay) @item.Adres.İlce.ad/@item.Adres.İl.ad
+                </td>
+                <td>
+                    <img src="@item.Urun.Resim.yol" width="150" height="100" style="object-fit:cover" />
+                </td>
+                <td>
+                    @if (item.Urun.Video != null)
+                    {
+                        <video controls width="200">
+                            <source src="@item.Urun.Video.yol" />
+                        </video>
+                    }
+                </td>
+                <td>
+                    <a href="/Detail/Index/@item.Urun.adi/@item.Urun.id">@item.Urun.adi</a>
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.adet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tarih)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

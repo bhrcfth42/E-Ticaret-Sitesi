@@ -1,0 +1,36 @@
+﻿@model IEnumerable<eCompare.Models.Beden>
+
+@{
+    Layout = null;
+}
+
+<div class="col-lg-12" style="overflow:auto">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                İd
+            </th>
+            <th>
+                Beden Numarası
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.no)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "BedenDuzenle", new { id = item.id }) |
+                    @Html.ActionLink("Sil", "BedenSil", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

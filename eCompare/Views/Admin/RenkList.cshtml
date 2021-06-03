@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Kategori Listesi";
+    Layout = "~/Views/Shared/AdminAna.cshtml";
+    if (Session["kullanici_id"] == null)
+    {
+        Response.Redirect("~/Home/Giris");
+    }
+}
+
+@{
+    Html.RenderAction("SideBar");
+}
+
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+        @{
+            Html.RenderAction("TopBar");
+        }
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            @{
+                Html.RenderAction("RenkListIcerik");
+            }
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+    @{
+        Html.RenderAction("Footer");
+    }
+
+</div>
+<!-- End of Content Wrapper -->
