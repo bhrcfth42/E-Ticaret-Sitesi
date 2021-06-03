@@ -1,8 +1,13 @@
 # E-Ticaret-Sitesi
-ASP:NET MVC Yapısı ile yapılmış E-Ticaret Sitesidir. Harran Üniversitesi Bilgisayar Mühendisliği E-Ticaret dersi için hazırlanmış web sayfasıdır. Veri tabanı olarak SQL Server kullanılmıştır.
+ASP:NET MVC Yapısı ile yapılmış E-Ticaret Sitesidir.
+
+Harran Üniversitesi Bilgisayar Mühendisliği E-Ticaret dersi için hazırlanmış web sayfasıdır.
+
+Veri tabanı olarak SQL Server kullanılmıştır.
 
 # Proje Ekibi
 Cemile Genç - genccemile97@gmail.com
+
 Önder Fatih Buhurcu - fatihbuhurcu539@gmail.com
 
 # Ana Sayfa 
