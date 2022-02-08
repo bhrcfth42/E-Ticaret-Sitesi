@@ -1,5 +1,5 @@
 # E-Ticaret-Sitesi
-ASP:NET MVC Yapısı ile yapılmış E-Ticaret Sitesidir.
+ASP.NET MVC Yapısı ile yapılmış E-Ticaret Sitesidir.
 
 Harran Üniversitesi Bilgisayar Mühendisliği E-Ticaret dersi için hazırlanmış web sayfasıdır.
 
